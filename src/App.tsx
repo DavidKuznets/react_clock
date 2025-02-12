@@ -36,12 +36,10 @@ export class App extends React.Component<Props, State> {
   componentDidMount(): void {
     document.addEventListener('click', this.handleLeftClick);
     document.addEventListener('contextmenu', this.handleRightClick);
-
     this.timerId = window.setInterval(() => {
-      this.setState(prevState => ({
+      this.setState({
         clockName: getRandomName(),
-        hasClock: prevState.hasClock,
-      }));
+      });
     }, 3300);
   }
 
